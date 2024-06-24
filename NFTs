@@ -1,0 +1,44 @@
+let myNFTs = [];  // Store the NFTs
+
+// Creating function with areguments to create new NFTs
+function mintNFT(name, color, type, accessories) {
+  const nft = {
+    name,
+    color,
+    type,
+    accessories,
+  };
+  myNFTs.push(nft);
+  console.log(`Minted a new NFT: ${name}`);
+}
+
+function listNFTs() {
+// Iterate through the NFT collection
+  myNFTs.forEach((nft, index) => {
+    console.log(`NFT #${index + 1}:`);
+    console.log(`Name: ${nft.name}`);
+    console.log(`Color: ${nft.color}`);
+    console.log(`Type: ${nft.type}`);
+    console.log(`Accessories: ${nft.accessories}`);
+    console.log("-----------------------------");
+  });
+}
+
+// Show how many minted NFTs we have in total
+function getTotalSupply() {
+  return myNFTs.length;
+}
+
+// Created some NFTs
+mintNFT("Kiyomi Yurei", "Midnight Blue", "Mystical Warrior", "Crystalline Katana");
+console.log("The Midnight Warrior has appeared!");
+mintNFT("Ryuji Akeno", "Crimson and Black", "Fire Mage", "Flaming staff");
+console.log("Whoa, Ryuji Akeno looks fierce!");
+mintNFT("Aiko Tsukino", "Silver and Azure", "Cyber Samurai", "Laser katana");
+console.log("Aiko Tsukino joins the collection!!");
+
+// Show our minted NFTs
+listNFTs();
+
+// Show how many minted NFTs he have in total
+console.log(`Total number of NFTs: ${getTotalSupply()}`);
